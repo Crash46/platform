@@ -1,14 +1,14 @@
-#game settings
+# Game settings
 TITLE = "skoklio"
 WIDTH = 480
 HEIGTH = 600
 FPS = 30
-#player properties
+# Player properties
 PLAYER_ACC = 0.3
 PLAYER_FRICTION = -0.04
 PLAYER_GRAV = 0.8
 
-#colors
+# Colors
 WHITE = (255 , 255 , 255)
 BLACK = (0,0,0)
 RED = (255, 0 , 0)

@@ -1,10 +1,10 @@
-#main fail 
+# Main fail 
 import pygame
 import random
 from settings import *
 from sprites import *
 
-#initialize game winodow etc
+# Initialize game winodow etc
 class Game:
 	def __init__(self):
 		#initializes pygame
@@ -18,7 +18,7 @@ class Game:
 		#FPS check
 		self.clock = pygame.time.Clock()
 		self.running = True
-#start for new game 
+# Start for new game 
 	def new(self):
 		self.all_sprites = pygame.sprite.Group()
 		self.platforms = pygame.sprite.Group()
@@ -38,7 +38,7 @@ class Game:
 
 		self.run()
 
-#initialize game loop ticks the clock checks for events update and draw on screen
+# Initialize game loop ticks the clock checks for events update and draw on screen
 	def run(self):
 		
 		self.playing = True
@@ -48,7 +48,7 @@ class Game:
 			self.update()
 			self.draw()
 
-#game loop update
+# Game loop update
 	def update(self):
 		self.all_sprites.update()
 		#only if falling
@@ -59,7 +59,7 @@ class Game:
 			if hits:
 				self.player.pos.y = hits[0].rect.top or hits[0].rect.midbottom
 				self.player.vel.y = 0
-#game loops events
+# Game loops events
 	def events(self):
 		for event in pygame.event.get():
 			#check for closing window
@@ -72,19 +72,19 @@ class Game:
 			if event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_SPACE:
 					self.player.jump()
-#game loop draw
+# Game loop draw
 	def draw(self):
 		self.screen.fill(BLACK)
 		self.all_sprites.draw(self.screen)
 		pygame.display.flip()
-#start screen
+# Start screen
 	def show_start_screen(self):
 		pass
-#game over screen
+# Game over screen
 	def show_GO_screen(self):
 		pass
 
-#variable and settings for game 'running'
+# Variable and settings for game 'running'
 g = Game()
 g.show_start_screen()
 while g.running:
